@@ -1,5 +1,5 @@
 <div id="footer" class="light small">
-© 2019 - {{ .Site.Params.Author }}.
+© {{ dateFormat "2006" now }} - {{ .Site.Params.Author }}.
 {{ with .Site.Params.FooterMessage }}
 <br>
 {{ . }}
