@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		{{ partial "header.html" . }}
+	</head>
+
+	<body>
+		{{ partial "head.html" . }}
+		{{ partial "menu.html" . }}
+		<div id="content">
+		{{ partial "nav.html" . }}
+        <div id="main">
+            {{- block "main" . }}{{- end }}
+            {{ partial "footer.html" . }}
+        </div>
+        {{- block "footerfiles" . }}{{- end }}
+
+        {{ if and .Site.Params.fathomAnalytics .Site.Params.fathomAnalytics.siteID }}
+        {{- partial "fathom" . -}}
+        {{ end }}
+	</body>
+
+</html>

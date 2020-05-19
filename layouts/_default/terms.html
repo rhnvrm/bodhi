@@ -1,0 +1,18 @@
+{{ define "main" }}
+	{{ if or .Title .Content }}
+	<div>
+		{{ with .Title }}<h1>{{ . }}</h1>{{ end }}
+		{{ with .Content }}<div>{{ . }}</div>{{ end }}
+	</div>
+	{{ end }}
+
+    <div>
+        <ul>
+            {{ range $key, $value := .Data.Terms }}
+            <li>
+                <a href="{{ $key | urlize }}">{{ $key }}</a> ({{ len $value }})
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+{{ end }}

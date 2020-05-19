@@ -1,0 +1,18 @@
+<div class="light">
+	<span>{{ dateFormat "02 Jan 2006" $.Date }}</span> -
+	<span>{{ .ReadingTime }} minute read</span>
+</div>
+<div class="small">
+	{{ with .Params.categories }}
+	categories: 
+	{{ range . }}
+	<a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+	{{ end }}
+	{{ end }}
+	{{ with .Params.tags }}
+	tags: 
+	{{ range . }}
+	<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+	{{ end }}
+	{{ end }}
+</div>

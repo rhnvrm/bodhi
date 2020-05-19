@@ -1,0 +1,24 @@
+{{ define "main" }}
+	{{ if or .Title .Content }}
+	<div>
+		{{ with .Title }}<h1>{{ . }}</h1>{{ end }}
+		{{ with .Content }}<div>{{ . }}</div>{{ end }}
+	</div>
+	{{ end }}
+
+	{{ $pages := .RegularPages }}
+
+	{{ if .Sections }}
+	{{ range $section := .Sections }}
+	{{ $pages = union $pages $section.Pages }}
+	{{ end }}
+	{{ end }}
+	
+	{{ range (.Paginate $pages).Pages }}
+	{{ partial "list_preview" . }}
+	{{ end }}
+
+	{{ if len $pages }}
+	{{ partial "pagination.html" . }}
+	{{ end }}
+{{ end }}

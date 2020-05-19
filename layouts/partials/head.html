@@ -1,0 +1,14 @@
+<div id="header">
+    {{ if .Site.Params.Avatar }}
+        <div class="avatar">
+			<a href="{{ .Site.BaseURL }}">
+				<img src="{{ .Site.Params.Avatar }}" alt="{{ .Site.Title }}" />
+			</a>
+        </div>
+    {{ end }}
+	<a id="headerLink" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+    {{- if isset .Site.Params "subtitle" -}}
+	<span class="hidden"> - </span>
+	<span id="headerSubtitle">{{ .Site.Params.Subtitle | markdownify }}</span>
+    {{- end -}}
+</div>

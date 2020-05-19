@@ -1,0 +1,15 @@
+<h2> 
+	<a href="{{ .RelPermalink }}">{{.Title}}{{ if .Draft }}<sup class="draft-label">DRAFT</sup>{{ end }}</a>
+</h2>
+
+{{ if in (slice "single" "") .Layout }}
+{{ partial "display_meta.html" . }}
+{{ end }}
+
+<div>
+{{ if isset .Params "description" }}
+	{{ .Description }}
+{{ else }}
+	{{ .Summary }}
+{{ end }}
+</div>

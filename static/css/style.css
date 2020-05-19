@@ -1,0 +1,253 @@
+/**/
+/* Style Sheet for Bodhi*/
+/* Forked from: https://suckless.org/pub/style.css
+ */
+
+html {
+	height: 100%;
+	margin: 0;
+}
+
+body {
+	background-color: #fff;
+	color: #000;
+	font-family: "Inter", sans-serif;
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	line-height: 1.6em;
+	font-size: 17px;
+}
+
+.small {
+    font-size: 13px;
+}
+
+pre, code {
+	margin: 0;
+}
+
+a {
+	color: #005386;
+}
+
+#header a, #nav a, #menu a {
+	text-decoration: none;
+}
+
+#nav a:hover {
+	background-color: #ddd;
+}
+
+#menu {
+	clear: both;
+	color: #1a9900;
+	overflow: hidden;
+	background-color: #557515;
+	padding: 0.7ex;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #1a9900;
+}
+
+#menu a {
+	padding: 0.5ex 1ex;
+	color: #fff;
+}
+
+#menu a:hover {
+	background-color: #1a9900;
+}
+
+#header {
+	background-color: #eee;
+	clear: both;
+	color: #555;
+	font-size: 1.78em;
+	padding: 0.7ex 0.7ex 0.7ex 0.7em;
+}
+
+#headerLink {
+	color: #109166;
+	margin-left: 5px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Source Serif Pro", serif;
+}
+
+h1 {
+	margin: 1em 1ex 0.5ex 0;
+	font-size: 1.4em;
+}
+
+h2 {
+	margin: 1em 1ex 0.5ex 0;
+	font-size: 1.3em;
+}
+
+h3 {
+	margin: 1em 1ex 0.5ex 0;
+	font-size: 1.0em;
+}
+
+h4 {
+	margin: 1em 1ex 0.5ex 0;
+	font-size: 0.9em;
+}
+
+#headerSubtitle {
+	font-size: 0.75em;
+	font-style: italic;
+}
+
+#content {
+	clear: both;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#nav {
+	float: left;
+	margin: 0 1px 0 0;
+	padding: 1em 0;
+	width: 200px;
+}
+
+#nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+#nav li {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#nav li ul {
+	padding-left: 0.6em !important;
+}
+
+#nav li a {
+	display: block;
+	margin: 0;
+	padding: 0.8ex 2em 0.8ex 1em;
+}
+
+#main {
+	min-height: 100%;
+	margin: 0 0 0 10px;
+	max-width: 50em;
+	padding: 1.5em;
+	border-left: 1px solid rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+}
+
+.left {
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+
+.right {
+	float: right;
+	margin: 0;
+	padding: 0;
+}
+
+.hidden {
+	display: none;
+}
+
+div.avatar {
+	height: 32px;
+	float: left;
+}
+
+.avatar img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+table {
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+    background-color: transparent;
+    margin-bottom: 1rem;
+    overflow-x: auto;
+    width: 100%;
+}
+
+
+
+table {
+    width:100%;
+    border-collapse:collapse;
+    margin:1.75rem 0;
+    color:#778087
+}
+table td,
+table th {
+    vertical-align:top;
+    border:1px solid #ccc;
+    padding:10px
+}
+table thead th {
+    font-size:10px
+}
+table tbody td:first-child {
+    font-weight:700;
+    color:#333;
+}
+
+pre {
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 20px;
+    overflow-x: auto;
+}
+
+.light {
+	color: #646464;
+}
+
+#pagination {
+	margin-top: 1em;
+}
+
+#footer {
+	padding-top: 50px;
+	margin-top: auto;
+}
+
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+img {
+    max-width: 100%;
+}
+
+@media only screen and (max-width:632px) {
+    #content {
+        flex-direction: column;
+    }
+
+    #main {
+        border-left: 0px solid rgba(0, 0, 0, 0.1);
+        padding: 0.5em;
+    }
+
+    #nav {
+        width: 100%;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+}

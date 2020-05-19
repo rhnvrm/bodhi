@@ -1,0 +1,11 @@
+{{ define "main" }}
+{{ if .Content }}
+{{ .Content }}
+{{ else }}
+{{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+{{ range $paginator.Pages }}
+{{ partial "list_preview" . }}
+{{ end }}
+{{ partial "pagination.html" . }}
+{{ end }}
+{{ end }}

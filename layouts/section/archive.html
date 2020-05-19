@@ -1,0 +1,34 @@
+{{ define "main" }}
+{{ with .Title }}
+<h1>{{.}}</h1>
+{{ end }}
+{{ $prev := 3000}}
+{{range .Site.RegularPages}}
+{{if .Date}}
+{{if gt $prev (.Date.Format "2006")}}
+{{ if ne $prev 3000}}
+</tbody>
+</table>
+{{ end }}
+<table class="all-posts">
+  <col width="15%">
+  <col width="85%">
+  <thead>
+    <tr><th></th><th>
+        {{$dt := .Date.Format "2006" }}
+        <a href="/blog/{{$dt}}">
+          {{ $dt }}
+        </a>
+    </th></tr>
+  </thead>
+  <tbody>
+    {{end}}
+    <tr>
+      <th>{{.Date.Format "02 Jan"}}</th>
+      <td><a href="{{.Permalink}}">{{.Title}}</a> {{if .Draft}}(draft){{end}}</td>
+    </tr>
+    {{ $prev = .Date.Format "2006"}}
+    {{end}}
+    {{end}}
+</table>   
+{{ end }}

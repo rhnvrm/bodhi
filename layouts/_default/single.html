@@ -1,0 +1,35 @@
+{{ define "main" }}
+		<article>
+			<h1>{{ .Title }}</h1>
+			<div class="small right">
+				{{ partial "addtoany.html" . }}
+			</div>
+			{{ partial "display_meta.html" . }}
+			<hr>
+			
+			<div>
+				{{ .Content }}
+			</div>
+		</article>
+		{{ $related := .Site.RegularPages.Related . | first 5 }}
+		{{ with $related }}
+		<h3>See Also</h3>
+		<ul class="small">
+			{{- range . }}
+			<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+			{{ end }}
+		</ul>
+		{{ end }}
+		
+		{{ with .Site.DisqusShortname }}
+		<div>
+			{{ template "_internal/disqus.html" . }}
+		</div>
+		{{ end }}
+		{{ with .Site.Params.CommentoSrc }}
+		<div>
+			{{ partial "commento.html" . }}
+		</div>
+		{{ end }}
+		
+{{ end }}
