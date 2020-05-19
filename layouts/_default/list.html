@@ -14,7 +14,7 @@
 	{{ end }}
 	{{ end }}
 	
-	{{ range (.Paginate $pages).Pages }}
+	{{ range (.Paginate $pages).Pages.ByDate.Reverse }}
 	{{ partial "list_preview" . }}
 	{{ end }}
 
