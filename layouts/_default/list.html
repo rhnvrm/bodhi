@@ -14,8 +14,9 @@
 	{{ end }}
 	{{ end }}
 	
-	{{ range (.Paginate $pages).Pages.ByDate.Reverse }}
-	{{ partial "list_preview" . }}
+	{{ $sorted := sort $pages "Params.date" "desc" }}
+	{{ range $post := (.Paginate $sorted).Pages }}
+	{{ partial "list_preview" $post }}
 	{{ end }}
 
 	{{ if len $pages }}
