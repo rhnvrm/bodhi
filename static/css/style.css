@@ -16,11 +16,11 @@ body {
 	margin: 0;
 	height: 100%;
 	line-height: 1.6em;
-	font-size: 17px;
+	font-size: 1.0em;
 }
 
 .small {
-    font-size: 13px;
+    font-size: 0.9em;
 }
 
 pre, code {
@@ -29,6 +29,12 @@ pre, code {
 
 a {
 	color: #005386;
+	padding: 2px;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
 }
 
 #header a, #nav a, #menu a {
@@ -36,7 +42,7 @@ a {
 }
 
 #nav a:hover {
-	background-color: #ddd;
+	background-color: #eee;
 }
 
 #menu {
@@ -77,22 +83,27 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
 	margin: 1em 1ex 0.5ex 0;
-	font-size: 1.4em;
+	font-size: 1.6em;
 }
 
 h2 {
 	margin: 1em 1ex 0.5ex 0;
-	font-size: 1.3em;
+	font-size: 1.5em;
 }
 
 h3 {
 	margin: 1em 1ex 0.5ex 0;
-	font-size: 1.0em;
+	font-size: 1.3em;
 }
 
 h4 {
 	margin: 1em 1ex 0.5ex 0;
-	font-size: 0.9em;
+	font-size: 1.2em;
+}
+
+h5 {
+	margin: 1em 1ex 0.5ex 0;
+	font-size: 1.0em;
 }
 
 #headerSubtitle {
@@ -113,7 +124,7 @@ h4 {
 	float: left;
 	margin: 0 1px 0 0;
 	padding: 1em 0;
-	width: 200px;
+	width: 20%;
 }
 
 #nav ul {
@@ -140,11 +151,10 @@ h4 {
 #main {
 	min-height: 100%;
 	margin: 0 0 0 10px;
-	max-width: 50em;
+	min-width: 75%;
 	padding: 1.5em;
+	padding-top: 0em;
 	border-left: 1px solid rgba(0, 0, 0, 0.1);
-	display: flex;
-	flex-direction: column;
 }
 
 .left {
@@ -176,17 +186,6 @@ div.avatar {
 }
 
 table {
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    -webkit-overflow-scrolling: touch;
-    background-color: transparent;
-    margin-bottom: 1rem;
-    overflow-x: auto;
-    width: 100%;
-}
-
-
-
-table {
     width:100%;
     border-collapse:collapse;
     margin:1.75rem 0;
@@ -199,7 +198,7 @@ table th {
     padding:10px
 }
 table thead th {
-    font-size:10px
+    font-size:0.8em;
 }
 table tbody td:first-child {
     font-weight:700;
@@ -234,6 +233,10 @@ hr {
 
 img {
     max-width: 100%;
+}
+
+.i-search {
+	margin-left: 5px;
 }
 
 @media only screen and (max-width:632px) {
