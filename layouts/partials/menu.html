@@ -1,6 +1,6 @@
 <div id="menu">
 	{{ $currentPage := . }}
-	{{ range .Site.Menus.main_left }}
+	{{ range .Site.Menus.main }}
 	{{if eq $currentPage.Params.url .URL }}<b>{{end}}
 	<a href="{{ .URL }}">{{ .Name }}</a>
 	{{if eq $currentPage.Params.url .URL }}</b>{{end}}

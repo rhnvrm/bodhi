@@ -50,7 +50,7 @@ googleAnalytics = "xxxx"
     commentoSrc = "https://commento.myselfhostedinstance.net/js/commento.js"
     footerMessage = "Feel free to use the content of this website with approripate attribution to the author."
 
-[[menu.main_left]]
+[[menu.main]]
 name = "home"
 url = "/"
 weight = 1
