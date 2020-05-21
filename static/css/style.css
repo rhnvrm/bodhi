@@ -240,6 +240,15 @@ img {
 	margin-left: 5px;
 }
 
+.feather {
+	stroke: currentColor;
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	fill: none;
+	vertical-align: -0.125em;
+}
+
 @media only screen and (max-width:632px) {
     #content {
         flex-direction: column;
