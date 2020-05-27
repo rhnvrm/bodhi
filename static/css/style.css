@@ -151,7 +151,7 @@ h5 {
 #main {
 	min-height: 100%;
 	margin: 0 0 0 10px;
-	min-width: 75%;
+    max-width: 600px;
 	padding: 1.5em;
 	padding-top: 0em;
 	border-left: 1px solid rgba(0, 0, 0, 0.1);
