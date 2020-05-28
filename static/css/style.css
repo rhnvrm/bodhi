@@ -16,7 +16,7 @@ body {
 	margin: 0;
 	height: 100%;
 	line-height: 1.6em;
-	font-size: 1.0em;
+	font-size: 1.1em;
 }
 
 .small {
@@ -102,6 +102,11 @@ h4 {
 }
 
 h5 {
+	margin: 1em 1ex 0.5ex 0;
+	font-size: 1.1em;
+}
+
+h6 {
 	margin: 1em 1ex 0.5ex 0;
 	font-size: 1.0em;
 }

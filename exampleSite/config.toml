@@ -1,0 +1,64 @@
+baseURL = "https://example.com/"
+languageCode = "en-us"
+title = "Bodhi Theme"
+theme = "bodhi"
+googleAnalytics = "xxxx"
+
+[params]
+    subtitle = "simple and minimal."
+    avatar = "/avatar.png"
+    author = "Rohan Verma"
+    commentoSrc = "https://commento.myselfhostedinstance.net/js/commento.js"
+    footerMessage = "Keep it simple."
+
+[[menu.main]]
+name = "home"
+url = "/"
+weight = 1
+
+[[menu.main_right]]
+name = "contact"
+url = "/contact/"
+weight = 1
+
+[[menu.nav]]
+name = "blogs"
+url = "/blog"
+weight = 1
+
+[[menu.nav]]
+parent = "blogs"
+name = "archive"
+url = "/archive"
+weight = 1
+
+[[menu.nav]]
+parent = "blogs"
+name = "tags"
+url = "/tags"
+weight = 2
+
+[[menu.nav]]
+parent = "blogs"
+name = "categories"
+url = "/categories"
+weight = 3
+
+[markup.goldmark.renderer]
+unsafe= true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[params.fathomAnalytics]
+    siteID = "XXXXX"
+    serverURL = "https://fathom.myselfhostedinstance.net"
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNoStart = 1
+    noClasses = true
+    style = "emacs"
+    tabWidth = 4
