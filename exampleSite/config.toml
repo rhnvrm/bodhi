@@ -8,7 +8,7 @@ googleAnalytics = "xxxx"
     subtitle = "simple and minimal."
     avatar = "/avatar.png"
     author = "Rohan Verma"
-    commentoSrc = "https://commento.myselfhostedinstance.net/js/commento.js"
+    commentoSrc = "https://commento.example.com/js/commento.js"
     footerMessage = "Keep it simple."
 
 [[menu.main]]
@@ -52,7 +52,7 @@ unsafe= true
 
 [params.fathomAnalytics]
     siteID = "XXXXX"
-    serverURL = "https://fathom.myselfhostedinstance.net"
+    serverURL = "https://fathom.example.com"
 
 [markup]
   [markup.highlight]
