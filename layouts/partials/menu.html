@@ -17,7 +17,9 @@
 	</a>
 	{{- end -}}
 	{{if eq $currentPage.Params.url "/search/" }}<b>{{end}}
-	<a href="/search">search<svg aria-hidden="true" class="i-search" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"><circle cx="14" cy="14" r="12"></circle><path d="M23 23l7 7"></path></svg></a>	
+	{{if and (not (isset .Site.Params "disableSearch")) (not (eq .Site.Params.disableSearch false)) }}
+		<a href="/search">search<svg aria-hidden="true" class="i-search" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"><circle cx="14" cy="14" r="12"></circle><path d="M23 23l7 7"></path></svg></a>	
+	{{end}}
 	{{if eq $currentPage.Params.url "/search/" }}</b>{{end}}
 	</span>
 </div>
