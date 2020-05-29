@@ -52,3 +52,8 @@ unsafe= true
     noClasses = true
     style = "emacs"
     tabWidth = 4
+
+[[params.social]]
+name = "Github"
+icon = "github"
+url = "https://github.com/rhnvrm/bodhi"
