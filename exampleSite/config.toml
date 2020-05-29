@@ -2,7 +2,6 @@ baseURL = "https://example.com/"
 languageCode = "en-us"
 title = "Bodhi Theme"
 theme = "bodhi"
-googleAnalytics = "xxxx"
 
 [params]
     subtitle = "simple and minimal."
