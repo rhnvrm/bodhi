@@ -44,10 +44,6 @@ unsafe= true
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
-[params.fathomAnalytics]
-    siteID = "XXXXX"
-    serverURL = "https://fathom.example.com"
-
 [markup]
   [markup.highlight]
     codeFences = true
