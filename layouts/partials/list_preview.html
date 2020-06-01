@@ -1,5 +1,5 @@
 <h2> 
-	<a href="{{ .RelPermalink }}">{{.Title}}{{ if .Draft }}<sup class="draft-label">DRAFT</sup>{{ end }}</a>
+	<a href="{{ .RelPermalink | absURL }}">{{.Title}}{{ if .Draft }}<sup class="draft-label">DRAFT</sup>{{ end }}</a>
 </h2>
 
 {{ if in (slice "single" "") .Layout }}

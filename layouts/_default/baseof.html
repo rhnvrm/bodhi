@@ -10,28 +10,28 @@
 		{{ partial "head.html" . }}
 		{{ partial "menu.html" . }}
 		<div id="content">
-		{{ partial "nav.html" . }}
-        <div id="main">
-            {{- block "main" . }}{{- end }}
-            {{ partial "footer.html" . }}
-        </div>
-        {{- block "footerfiles" . }}{{- end }}
+			{{ partial "nav.html" . }}
+			<div id="main">
+				{{- block "main" . }}{{- end }}
+				{{ partial "footer.html" . }}
+			</div>
+			{{- block "footerfiles" . }}{{- end }}
 
-        {{ if and .Site.Params.fathomAnalytics .Site.Params.fathomAnalytics.siteID }}
-        {{- partial "fathom" . -}}
-		{{ end }}
+			{{ if and .Site.Params.fathomAnalytics .Site.Params.fathomAnalytics.siteID }}
+			{{- partial "fathom" . -}}
+			{{ end }}
 
-		{{ template "_internal/google_analytics_async.html" . }}
-
+			{{ template "_internal/google_analytics_async.html" . }}
+		</div>
 		{{- with .Site.Params.Social -}}
 		<script>feather.replace({
 			width: "1em",
 			height: "1em",
 		})
 		</script>
-		{{- end -}}
+		{{- end }}
 		
-		<script src="/js/main.js"></script>
+		<script src="{{"/js/main.js" | absURL }}"></script>
 	</body>
 
 </html>
