@@ -17,8 +17,8 @@ url = "/"
 weight = 1
 
 [[menu.main_right]]
-name = "contact"
-url = "/contact/"
+name = "about"
+url = "/about/"
 weight = 1
 
 [[menu.nav]]

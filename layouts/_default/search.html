@@ -1,14 +1,14 @@
 {{ define "footerfiles" }}
-<script src="{{ "/js/jquery-3.3.1.min.js" | absURL }}"></script>
-<script src="{{ "/js/fuse.min.js" | absURL }}"></script>
-<script src="{{ "/js/jquery.mark.min.js" | absURL }}"></script>
-<script src="{{ "js/search.js" | absURL }}"></script>
+<script src="{{ "/js/jquery-3.3.1.min.js" | relURL }}"></script>
+<script src="{{ "/js/fuse.min.js" | relURL }}"></script>
+<script src="{{ "/js/jquery.mark.min.js" | relURL }}"></script>
+<script src="{{ "js/search.js" | relURL }}"></script>
 {{ end }}
 {{ define "main" }}
 <div>
   <h2>Search</h2>
   <div class="my-auto" >
-    <form action="{{ "search" | absURL }}">
+    <form action="{{ "search" | relURL }}">
       <input id="search-query" name="s" placeholder="search"/>
     </form>
     <span class="small">press enter to search</span>

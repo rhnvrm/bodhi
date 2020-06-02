@@ -1,12 +1,12 @@
 <div id="pagination">
 {{ if .Paginator.HasPrev }}
-<a href="{{ .Paginator.Prev.URL | absURL }}"><</a>
+<a href="{{ .Paginator.Prev.URL | relURL }}"><</a>
 {{ else }}
 &lt;
 {{ end }}
 {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}
 {{ if .Paginator.HasNext }}
-	<a href="{{ .Paginator.Next.URL | absURL }}">></a>
+	<a href="{{ .Paginator.Next.URL | relURL }}">></a>
 {{ else }}
 &gt;
 {{ end }}

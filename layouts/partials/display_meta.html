@@ -6,13 +6,13 @@
 	{{ with .Params.categories }}
 	categories: 
 	{{ range . }}
-	<a href="{{ "/categories/" | absURL }}{{ . | urlize }}">{{ . }}</a>
+	<a href="{{ "/categories/" | relURL }}{{ . | urlize }}">{{ . }}</a>
 	{{ end }}
 	{{ end }}
 	{{ with .Params.tags }}
 	tags: 
 	{{ range . }}
-	<a href="{{ "/tags/" | absURL }}{{ . | urlize }}">{{ . }}</a>
+	<a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>
 	{{ end }}
 	{{ end }}
 </div>

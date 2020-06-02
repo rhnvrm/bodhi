@@ -2,23 +2,23 @@
 	{{ $currentPage := . }}
 	{{ range .Site.Menus.main }}
 	{{if eq $currentPage.Params.url .URL }}<b>{{end}}
-	<a href="{{ .URL | absURL }}">{{ .Name }}</a>
+	<a href="{{ .URL | relURL }}">{{ .Name }}</a>
 	{{if eq $currentPage.Params.url .URL }}</b>{{end}}
 	{{ end }}
 	<span class="right">
 		{{ range .Site.Menus.main_right }}
 		{{if eq $currentPage.Params.url .URL }}<b>{{end}}
-			<a href="{{ .URL | absURL }}">{{ .Name }}</a>
+			<a href="{{ .URL | relURL }}">{{ .Name }}</a>
 		{{if eq $currentPage.Params.url .URL }}</b>{{end}}
 	{{ end }}
 	{{- range $index, $key := .Site.Params.Social -}}
-	<a href="{{ $key.url | absURL }}" title="{{ $key.name }}">
+	<a href="{{ $key.url | relURL }}" title="{{ $key.name }}">
 		<i data-feather="{{ $key.icon }}"></i>
 	</a>
 	{{- end -}}
 	{{if eq $currentPage.Params.url "/search/" }}<b>{{end}}
 	{{if and (not (isset .Site.Params "disableSearch")) (not (eq .Site.Params.disableSearch true)) }}
-		<a href="{{ "/search" | absURL }}">search<svg aria-hidden="true" class="i-search" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"><circle cx="14" cy="14" r="12"></circle><path d="M23 23l7 7"></path></svg></a>	
+		<a href="{{ "/search" | relURL }}">search<svg aria-hidden="true" class="i-search" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"><circle cx="14" cy="14" r="12"></circle><path d="M23 23l7 7"></path></svg></a>	
 	{{end}}
 	{{if eq $currentPage.Params.url "/search/" }}</b>{{end}}
 	</span>
