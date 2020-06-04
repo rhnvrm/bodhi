@@ -9,7 +9,7 @@ theme = "bodhi"
     author = "Rohan Verma"
     commentoSrc = "https://commento.example.com/js/commento.js"
     footerMessage = "Keep it simple."
-    disableSearch = true
+    disableSearch = false
 
 [[menu.main]]
 name = "home"

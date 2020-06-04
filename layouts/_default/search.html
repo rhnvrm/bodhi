@@ -2,7 +2,7 @@
 <script src="{{ "/js/jquery-3.3.1.min.js" | relURL }}"></script>
 <script src="{{ "/js/fuse.min.js" | relURL }}"></script>
 <script src="{{ "/js/jquery.mark.min.js" | relURL }}"></script>
-<script src="{{ "js/search.js" | relURL }}"></script>
+<script src="{{ "/js/search.js" | relURL }}"></script>
 {{ end }}
 {{ define "main" }}
 <div>
@@ -18,6 +18,9 @@
     </div>
   </div>
 </div>
+<script>
+var baseURL = {{ .Site.BaseURL }}
+</script>
 <!-- this template is sucked in by search.js and appended to the search-results div above. So editing here will adjust style -->
 <script id="search-result-template" type="text/x-js-template">
     <div id="summary-${key}">
