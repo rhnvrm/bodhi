@@ -3,18 +3,66 @@
 /* Forked from: https://suckless.org/pub/style.css
  */
 
+/* Colors */
+:root {
+    --background-primary: #eee;
+    --color-primary: #000;
+    --color-link: #005386;
+    --nav-link-a-hover: #eee;
+    --menu-color: #1a9900;
+    --menu-background-color: #557515;
+    --menu-border-top-color: #ccc;
+    --menu-border-bottom-color: #1a9900;
+    --menu-a-color: #fff;
+    --menu-a-hover-background-color: #1a9900;
+    --header-background-color: #eee;
+    --header-color: #555;
+    --headerlink-color: #109166;
+    --main-border-left: rgba(0,0,0,0.1);
+    --main-background: #fefefe;
+    --table-color: #778087;
+    --table-border-color: #ccc;
+    --table-tbody-firstchild-color: #333;
+    --light-color: #646464;
+    --hr-border-color: rgba(0,0,0,0.1);
+}
+
+html[data-theme='dark'] {
+    --background-primary: rgb(14, 15, 16);
+    --color-primary: rgb(232, 230, 227);
+    --color-link: rgb(110, 200, 255);
+    --nav-link-a-hover: rgb(34, 36, 38);
+    --menu-color: rgb(124, 255, 97);
+    --menu-background-color: rgb(68, 94, 17);
+    --menu-border-top-color: rgb(62, 68, 70);
+    --menu-border-bottom-color: rgb(36, 209, 0);
+    --menu-a-color: rgb(232, 230, 227);
+    --menu-a-hover-background-color: rgb(21, 122, 0);
+    --header-background-color: rgb(34, 36, 38);
+    --header-color: rgb(178, 172, 162);
+    --headerlink-color: #109166;
+    --main-border-left: rgba(140, 130, 115, 0.1);
+    --main-background: #1e1e1e;
+    --table-color: rgb(152, 143, 129);
+    --table-border-color: #545b5e;
+    --table-tbody-firstchild-color: rgb(62, 68, 70);
+    --light-color:rgb(169, 161, 150);
+    --hr-border-color: rgba(140, 130, 115, 0.1);
+}
+
+/* Design */
 html {
 	height: 100%;
 	margin: 0;
 }
 
 body {
-	background-color: #fff;
-	color: #000;
+	background-color: var(--background-primary);
+	color: var(--color-primary);
 	font-family: "Inter", sans-serif;
 	padding: 0;
 	margin: 0;
-	height: 100%;
+	height: max-content;
 	line-height: 1.6em;
 	font-size: 1.1em;
 }
@@ -28,7 +76,7 @@ pre, code {
 }
 
 a {
-	color: #005386;
+	color: var(--color-link);
 	padding: 2px;
 	text-decoration: none;
 }
@@ -42,38 +90,38 @@ a:hover {
 }
 
 #nav a:hover {
-	background-color: #eee;
+	background-color: var(--nav-link-a-hover);
 }
 
 #menu {
 	clear: both;
-	color: #1a9900;
 	overflow: hidden;
-	background-color: #557515;
 	padding: 0.7ex;
-	border-top: 1px solid #ccc;
-	border-bottom: 1px solid #1a9900;
+	color: var(--menu-color);
+	background-color: var(--menu-background-color);
+	border-top: 1px solid var(--menu-border-top);
+	border-bottom: 1px solid var(--menu-border-bottom-color);
 }
 
 #menu a {
 	padding: 0.5ex 1ex;
-	color: #fff;
+	color: var(--menu-a-color);
 }
 
 #menu a:hover {
-	background-color: #1a9900;
+	background-color: 	var(--menu-a-hover-background-color);
 }
 
 #header {
-	background-color: #eee;
+	background-color: var(--header-background-color);
 	clear: both;
-	color: #555;
+	color: var(--header-color);
 	font-size: 1.78em;
 	padding: 0.7ex 0.7ex 0.7ex 0.7em;
 }
 
 #headerLink {
-	color: #109166;
+	color: var(--headerlink-color);
 	margin-left: 5px;
 }
 
@@ -159,7 +207,9 @@ h6 {
     max-width: 600px;
 	padding: 1.5em;
 	padding-top: 0em;
-	border-left: 1px solid rgba(0, 0, 0, 0.1);
+	border-left: 1px solid var(--main-border-left);
+    background: var(--main-background);
+    height: max-content;
 }
 
 .left {
@@ -194,12 +244,12 @@ table {
     width:100%;
     border-collapse:collapse;
     margin:1.75rem 0;
-    color:#778087
+    color: var(--table-color);
 }
 table td,
 table th {
     vertical-align:top;
-    border:1px solid #ccc;
+    border:1px solid var(--table-border-color);
     padding:10px
 }
 table thead th {
@@ -207,7 +257,7 @@ table thead th {
 }
 table tbody td:first-child {
     font-weight:700;
-    color:#333;
+    color:var(--table-tbody-firstchild-color);
 }
 
 pre {
@@ -218,7 +268,7 @@ pre {
 }
 
 .light {
-	color: #646464;
+	color: var(--light-color);
 }
 
 #pagination {
@@ -234,7 +284,7 @@ pre {
 hr {
     border: 0;
     height: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid var(--hr-border-color);
 }
 
 img {
@@ -267,5 +317,9 @@ img {
     #nav {
         width: 100%;
         border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .right {
+        float: left;
     }
 }
