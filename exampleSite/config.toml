@@ -49,8 +49,7 @@ unsafe= true
     codeFences = true
     guessSyntax = true
     lineNoStart = 1
-    noClasses = true
-    style = "emacs"
+    noClasses = false
     tabWidth = 4
 
 [[params.social]]
