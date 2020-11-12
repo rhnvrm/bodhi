@@ -2,14 +2,19 @@
 
 Bodhi is a simple, minimal, personal website theme for Hugo.
 
-[Demo](https://rohanverma.net/projects/bodhi) [Github](https://github.com/rhnvrm/bodhi)
+[Demo](https://themes.gohugo.io//theme/bodhi/blog) | [Github](https://github.com/rhnvrm/bodhi)
 
-![Github Sample](images/github.png)
+## Previews
+
+![preview](https://rohanverma.net/projects/bodhi/preview.png)
+
+![preview_dark](https://rohanverma.net/projects/bodhi/preview_dark.png)
 
 ## Features
 
 - Google and Fathom Analytics integration
 - Syntax highlighting
+- Dark mode
 - Twitter cards and opengraph tags support
 - Disqus and Commento comments
 - RSS feeds
@@ -20,10 +25,7 @@ Bodhi is a simple, minimal, personal website theme for Hugo.
 - Two navigation menus
   - Menu bar with left/right split
   - Navigation bar with custom tree
-- Included Archetypes (WIP)
-  - Posts (for blogs)
-  - Articles (for pages)
-
+  
 ## Get Started
 
 ### Clone as submodule in your hugo site
@@ -34,7 +36,7 @@ git submodule add https://github.com/rhnvrm/bodhi themes/bodhi
 
 ### Sample Config
 
-Update your hugo config.toml
+After cloning the submodule, you can need to update your hugo config.toml
 
 You can use the following sample config file:
 
@@ -111,42 +113,10 @@ unsafe= true
     codeFences = true
     guessSyntax = true
     lineNoStart = 1
-    noClasses = true
-    style = "emacs"
+    noClasses = false
     tabWidth = 4
-
 ```
 
-## Previews
-
-### Home Page
-
-![preview](https://rohanverma.net/projects/bodhi/preview.png)
-
-### Archive Page
-
-![archive page](https://rohanverma.net/projects/bodhi/blog_archive.png)
-
-### Inbuilt Search
-
-![search page](https://rohanverma.net/projects/bodhi/search.png)
-
-### Syntax Highlighting
-
-![syntax](https://rohanverma.net/projects/bodhi/syntax.png)
-
-### Minimal Blog Metadata
-
-![blog](https://rohanverma.net/projects/bodhi/blog.png)
-
-### Simple but Responsive
-
-![responsive](https://rohanverma.net/projects/bodhi/responsive.png)
-
-## Inspiration
-
-## suckless
-
-![suckless](https://rohanverma.net/projects/bodhi/suckless.png)
+## Inspiration - suckless
 
 [suckless](https://suckless.org) is known for their focus on simplicity and clarity. Their website is a good example of simple website design. I really liked how they use the two-column design as a mini-sitemap. This tree layout, is something that is familiar and intuitive to a lot of people. This inspired me to build [Bodhi](/projects/bodhi) to have a two-column layout with the column showing a tree like column on the left. 
