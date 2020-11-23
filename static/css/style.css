@@ -5,405 +5,686 @@
 
 /* Colors */
 :root {
-    --background-primary: #eee;
-    --color-primary: #000;
-    --color-link: #005386;
-    --nav-link-a-hover: #eee;
-    --menu-color: #1a9900;
-    --menu-background-color: #557515;
-    --menu-border-top-color: #ccc;
-    --menu-border-bottom-color: #1a9900;
-    --menu-a-color: #fff;
-    --menu-a-hover-background-color: #1a9900;
-    --header-background-color: #eee;
-    --header-color: #555;
-    --headerlink-color: #109166;
-    --main-border-left: rgba(0,0,0,0.1);
-    --main-background: #fefefe;
-    --table-color: #778087;
-    --table-border-color: #ccc;
-    --table-tbody-firstchild-color: #333;
-    --light-color: #646464;
-    --hr-border-color: rgba(0,0,0,0.1);
+  --background-primary: #eee;
+  --color-primary: #000;
+  --color-link: #005386;
+  --nav-link-a-hover: #eee;
+  --menu-color: #1a9900;
+  --menu-background-color: #557515;
+  --menu-border-top-color: #ccc;
+  --menu-border-bottom-color: #1a9900;
+  --menu-a-color: #fff;
+  --menu-a-hover-background-color: #1a9900;
+  --header-background-color: #eee;
+  --header-color: #555;
+  --headerlink-color: #109166;
+  --main-border-left: rgba(0, 0, 0, 0.1);
+  --main-background: #fefefe;
+  --table-color: #778087;
+  --table-border-color: #ccc;
+  --table-tbody-firstchild-color: #333;
+  --light-color: #646464;
+  --hr-border-color: rgba(0, 0, 0, 0.1);
 }
 
-html[data-theme='dark'] {
-    --background-primary: rgb(14, 15, 16);
-    --color-primary: rgb(232, 230, 227);
-    --color-link: rgb(110, 200, 255);
-    --nav-link-a-hover: rgb(34, 36, 38);
-    --menu-color: rgb(124, 255, 97);
-    --menu-background-color: rgb(68, 94, 17);
-    --menu-border-top-color: rgb(62, 68, 70);
-    --menu-border-bottom-color: rgb(36, 209, 0);
-    --menu-a-color: rgb(232, 230, 227);
-    --menu-a-hover-background-color: rgb(21, 122, 0);
-    --header-background-color: rgb(34, 36, 38);
-    --header-color: rgb(178, 172, 162);
-    --headerlink-color: #109166;
-    --main-border-left: rgba(140, 130, 115, 0.1);
-    --main-background: #1e1e1e;
-    --table-color: rgb(152, 143, 129);
-    --table-border-color: #545b5e;
-    --table-tbody-firstchild-color: rgb(62, 68, 70);
-    --light-color:rgb(169, 161, 150);
-    --hr-border-color: rgba(140, 130, 115, 0.1);
+html[data-theme="dark"] {
+  --background-primary: rgb(14, 15, 16);
+  --color-primary: rgb(232, 230, 227);
+  --color-link: rgb(110, 200, 255);
+  --nav-link-a-hover: rgb(34, 36, 38);
+  --menu-color: rgb(124, 255, 97);
+  --menu-background-color: rgb(68, 94, 17);
+  --menu-border-top-color: rgb(62, 68, 70);
+  --menu-border-bottom-color: rgb(36, 209, 0);
+  --menu-a-color: rgb(232, 230, 227);
+  --menu-a-hover-background-color: rgb(21, 122, 0);
+  --header-background-color: rgb(34, 36, 38);
+  --header-color: rgb(178, 172, 162);
+  --headerlink-color: #109166;
+  --main-border-left: rgba(140, 130, 115, 0.1);
+  --main-background: #1e1e1e;
+  --table-color: rgb(152, 143, 129);
+  --table-border-color: #545b5e;
+  --table-tbody-firstchild-color: rgb(62, 68, 70);
+  --light-color: rgb(169, 161, 150);
+  --hr-border-color: rgba(140, 130, 115, 0.1);
 }
 
 /* Design */
 html {
-	height: 100%;
-	margin: 0;
+  height: 100%;
+  margin: 0;
 }
 
 body {
-	background-color: var(--background-primary);
-	color: var(--color-primary);
-	font-family: "Inter", sans-serif;
-	padding: 0;
-	margin: 0;
-	height: max-content;
-	line-height: 1.6em;
-	font-size: 1.1em;
+  background-color: var(--background-primary);
+  color: var(--color-primary);
+  font-family: "Inter", sans-serif;
+  padding: 0;
+  margin: 0;
+  height: max-content;
+  line-height: 1.6em;
+  font-size: 1.1em;
 }
 
 .small {
-    font-size: 0.9em;
+  font-size: 0.9em;
 }
 
-pre, code {
-	margin: 0;
+pre,
+code {
+  margin: 0;
 }
 
 a {
-	color: var(--color-link);
-	padding: 2px;
-	text-decoration: none;
+  color: var(--color-link);
+  padding: 2px;
+  text-decoration: none;
 }
 
 a:hover {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
-#header a, #nav a, #menu a {
-	text-decoration: none;
+#header a,
+#nav a,
+#menu a {
+  text-decoration: none;
 }
 
 #nav a:hover {
-	background-color: var(--nav-link-a-hover);
+  background-color: var(--nav-link-a-hover);
 }
 
 #menu {
-	clear: both;
-	overflow: hidden;
-	padding: 0.7ex;
-	color: var(--menu-color);
-	background-color: var(--menu-background-color);
-	border-top: 1px solid var(--menu-border-top);
-	border-bottom: 1px solid var(--menu-border-bottom-color);
+  clear: both;
+  overflow: hidden;
+  padding: 0.7ex;
+  color: var(--menu-color);
+  background-color: var(--menu-background-color);
+  border-top: 1px solid var(--menu-border-top);
+  border-bottom: 1px solid var(--menu-border-bottom-color);
 }
 
 #menu a {
-	padding: 0.5ex 1ex;
-	color: var(--menu-a-color);
+  padding: 0.5ex 1ex;
+  color: var(--menu-a-color);
 }
 
 #menu a:hover {
-	background-color: 	var(--menu-a-hover-background-color);
+  background-color: var(--menu-a-hover-background-color);
 }
 
 #header {
-	background-color: var(--header-background-color);
-	clear: both;
-	color: var(--header-color);
-	font-size: 1.78em;
-	padding: 0.7ex 0.7ex 0.7ex 0.7em;
+  background-color: var(--header-background-color);
+  clear: both;
+  color: var(--header-color);
+  font-size: 1.78em;
+  padding: 0.7ex 0.7ex 0.7ex 0.7em;
 }
 
 #headerLink {
-	color: var(--headerlink-color);
-	margin-left: 5px;
+  color: var(--headerlink-color);
+  margin-left: 5px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-	font-family: "Source Serif Pro", serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Source Serif Pro", serif;
 }
 
 h1 {
-	margin: 1em 1ex 0.5ex 0;
-	font-size: 1.6em;
+  margin: 1em 1ex 0.5ex 0;
+  font-size: 1.6em;
 }
 
 h2 {
-	margin: 1em 1ex 0.5ex 0;
-	font-size: 1.5em;
+  margin: 1em 1ex 0.5ex 0;
+  font-size: 1.5em;
 }
 
 h3 {
-	margin: 1em 1ex 0.5ex 0;
-	font-size: 1.3em;
+  margin: 1em 1ex 0.5ex 0;
+  font-size: 1.3em;
 }
 
 h4 {
-	margin: 1em 1ex 0.5ex 0;
-	font-size: 1.2em;
+  margin: 1em 1ex 0.5ex 0;
+  font-size: 1.2em;
 }
 
 h5 {
-	margin: 1em 1ex 0.5ex 0;
-	font-size: 1.1em;
+  margin: 1em 1ex 0.5ex 0;
+  font-size: 1.1em;
 }
 
 h6 {
-	margin: 1em 1ex 0.5ex 0;
-	font-size: 1.0em;
+  margin: 1em 1ex 0.5ex 0;
+  font-size: 1em;
 }
 
 #headerSubtitle {
-	font-size: 0.75em;
-	font-style: italic;
+  font-size: 0.75em;
+  font-style: italic;
 }
 
 #content {
-	clear: both;
-	margin: 0;
-	padding: 0;
-	height: 100%;
-    display: flex;
-    flex-direction: row;
+  clear: both;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
 }
 
 #nav {
-	float: left;
-	margin: 0 1px 0 0;
-	padding: 1em 0;
-	width: 20%;
+  float: left;
+  margin: 0 1px 0 0;
+  padding: 1em 0;
+  width: 20%;
 }
 
 #nav ul {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 #nav li {
-	list-style: none;
-	padding: 0;
-	margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 #nav li ul {
-	padding-left: 0.6em !important;
+  padding-left: 0.6em !important;
 }
 
 #nav li a {
-	display: block;
-	margin: 0;
-	padding: 0.8ex 2em 0.8ex 1em;
+  display: block;
+  margin: 0;
+  padding: 0.8ex 2em 0.8ex 1em;
 }
 
 #main {
-	min-height: 100%;
-	margin: 0 0 0 10px;
-    max-width: 600px;
-	padding: 1.5em;
-	padding-top: 0em;
-	border-left: 1px solid var(--main-border-left);
-    background: var(--main-background);
-    height: max-content;
+  min-height: 100%;
+  margin: 0 0 0 10px;
+  max-width: 600px;
+  padding: 1.5em;
+  padding-top: 0em;
+  border-left: 1px solid var(--main-border-left);
+  background: var(--main-background);
+  height: max-content;
 }
 
 .left {
-	float: left;
-	margin: 0;
-	padding: 0;
+  float: left;
+  margin: 0;
+  padding: 0;
 }
 
 .right {
-	float: right;
-	margin: 0;
-	padding: 0;
+  float: right;
+  margin: 0;
+  padding: 0;
 }
 
 .hidden {
-	display: none;
+  display: none;
 }
 
 div.avatar {
-	height: 32px;
-	float: left;
+  height: 32px;
+  float: left;
 }
 
 .avatar img {
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    max-height: 100%;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 table {
-    width:100%;
-    border-collapse:collapse;
-    margin:1.75rem 0;
-    color: var(--table-color);
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.75rem 0;
+  color: var(--table-color);
 }
 table td,
 table th {
-    vertical-align:top;
-    border:1px solid var(--table-border-color);
-    padding:10px
+  vertical-align: top;
+  border: 1px solid var(--table-border-color);
+  padding: 10px;
 }
 table thead th {
-    font-size:0.8em;
+  font-size: 0.8em;
 }
 table tbody td:first-child {
-    font-weight:700;
-    color:var(--table-tbody-firstchild-color);
+  font-weight: 700;
+  color: var(--table-tbody-firstchild-color);
 }
 
 pre {
-	margin-bottom: 0;
-	margin-top: 0;
-	padding: 20px;
-    overflow-x: auto;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 20px;
+  overflow-x: auto;
 }
 
 .light {
-	color: var(--light-color);
+  color: var(--light-color);
 }
 
 #pagination {
-	margin-top: 1em;
+  margin-top: 1em;
 }
 
 #footer {
-	padding-top: 50px;
-	padding-bottom: 50px;
-	margin-top: auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-top: auto;
 }
 
 hr {
-    border: 0;
-    height: 0;
-    border-top: 1px solid var(--hr-border-color);
+  border: 0;
+  height: 0;
+  border-top: 1px solid var(--hr-border-color);
 }
 
 img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .i-search {
-	margin-left: 5px;
+  margin-left: 5px;
 }
 
 .feather {
-	stroke: currentColor;
-	stroke-width: 2;
-	stroke-linecap: round;
-	stroke-linejoin: round;
-	fill: none;
-	vertical-align: -0.125em;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  vertical-align: -0.125em;
 }
 
-@media only screen and (max-width:632px) {
-    #content {
-        flex-direction: column;
-    }
+@media only screen and (max-width: 632px) {
+  #content {
+    flex-direction: column;
+  }
 
-    #main {
-        border-left: 0px solid rgba(0, 0, 0, 0.1);
-        padding: 0.5em;
-    }
+  #main {
+    border-left: 0px solid rgba(0, 0, 0, 0.1);
+    padding: 0.5em;
+  }
 
-    #nav {
-        width: 100%;
-        border-bottom: 1px solid rgba(0,0,0,0.1);
-    }
+  #nav {
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
 
-    .right {
-        float: left;
-    }
+  .right {
+    float: left;
+  }
+}
+
+/* Commento */
+.commento-root * {
+  color: var(--color-primary);
 }
 
 /* Syntax Highlighting */
-/* Background */ .chroma { background-color: --background-primary: }
-/* Other */ .chroma .x {  }
-/* Error */ .chroma .err {  }
-/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
-/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; width: auto; overflow: auto; display: block; }
-/* LineHighlight */ .chroma .hl { display: block; width: 100%;background-color: #ffffcc }
-/* LineNumbersTable */ .chroma .lnt { margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7f7f7f }
-/* LineNumbers */ .chroma .ln { margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7f7f7f }
-/* Keyword */ .chroma .k { color: #aa22ff; font-weight: bold }
-/* KeywordConstant */ .chroma .kc { color: #aa22ff; font-weight: bold }
-/* KeywordDeclaration */ .chroma .kd { color: #aa22ff; font-weight: bold }
-/* KeywordNamespace */ .chroma .kn { color: #aa22ff; font-weight: bold }
-/* KeywordPseudo */ .chroma .kp { color: #aa22ff }
-/* KeywordReserved */ .chroma .kr { color: #aa22ff; font-weight: bold }
-/* KeywordType */ .chroma .kt { color: #00bb00; font-weight: bold }
-/* Name */ .chroma .n {  }
-/* NameAttribute */ .chroma .na { color: #bb4444 }
-/* NameBuiltin */ .chroma .nb { color: #aa22ff }
-/* NameBuiltinPseudo */ .chroma .bp {  }
-/* NameClass */ .chroma .nc { color: #0000ff }
-/* NameConstant */ .chroma .no { color: #880000 }
-/* NameDecorator */ .chroma .nd { color: #aa22ff }
-/* NameEntity */ .chroma .ni { color: #999999; font-weight: bold }
-/* NameException */ .chroma .ne { color: #d2413a; font-weight: bold }
-/* NameFunction */ .chroma .nf { color: #00a000 }
-/* NameFunctionMagic */ .chroma .fm {  }
-/* NameLabel */ .chroma .nl { color: #a0a000 }
-/* NameNamespace */ .chroma .nn { color: #0000ff; font-weight: bold }
-/* NameOther */ .chroma .nx {  }
-/* NameProperty */ .chroma .py {  }
-/* NameTag */ .chroma .nt { color: #008000; font-weight: bold }
-/* NameVariable */ .chroma .nv { color: #b8860b }
-/* NameVariableClass */ .chroma .vc {  }
-/* NameVariableGlobal */ .chroma .vg {  }
-/* NameVariableInstance */ .chroma .vi {  }
-/* NameVariableMagic */ .chroma .vm {  }
-/* Literal */ .chroma .l {  }
-/* LiteralDate */ .chroma .ld {  }
-/* LiteralString */ .chroma .s { color: #bb4444 }
-/* LiteralStringAffix */ .chroma .sa { color: #bb4444 }
-/* LiteralStringBacktick */ .chroma .sb { color: #bb4444 }
-/* LiteralStringChar */ .chroma .sc { color: #bb4444 }
-/* LiteralStringDelimiter */ .chroma .dl { color: #bb4444 }
-/* LiteralStringDoc */ .chroma .sd { color: #bb4444; font-style: italic }
-/* LiteralStringDouble */ .chroma .s2 { color: #bb4444 }
-/* LiteralStringEscape */ .chroma .se { color: #bb6622; font-weight: bold }
-/* LiteralStringHeredoc */ .chroma .sh { color: #bb4444 }
-/* LiteralStringInterpol */ .chroma .si { color: #bb6688; font-weight: bold }
-/* LiteralStringOther */ .chroma .sx { color: #008000 }
-/* LiteralStringRegex */ .chroma .sr { color: #bb6688 }
-/* LiteralStringSingle */ .chroma .s1 { color: #bb4444 }
-/* LiteralStringSymbol */ .chroma .ss { color: #b8860b }
-/* LiteralNumber */ .chroma .m { color: #666666 }
-/* LiteralNumberBin */ .chroma .mb { color: #666666 }
-/* LiteralNumberFloat */ .chroma .mf { color: #666666 }
-/* LiteralNumberHex */ .chroma .mh { color: #666666 }
-/* LiteralNumberInteger */ .chroma .mi { color: #666666 }
-/* LiteralNumberIntegerLong */ .chroma .il { color: #666666 }
-/* LiteralNumberOct */ .chroma .mo { color: #666666 }
-/* Operator */ .chroma .o { color: #666666 }
-/* OperatorWord */ .chroma .ow { color: #aa22ff; font-weight: bold }
-/* Punctuation */ .chroma .p {  }
-/* Comment */ .chroma .c { color: #008800; font-style: italic }
-/* CommentHashbang */ .chroma .ch { color: #008800; font-style: italic }
-/* CommentMultiline */ .chroma .cm { color: #008800; font-style: italic }
-/* CommentSingle */ .chroma .c1 { color: #008800; font-style: italic }
-/* CommentSpecial */ .chroma .cs { color: #008800; font-weight: bold }
-/* CommentPreproc */ .chroma .cp { color: #008800 }
-/* CommentPreprocFile */ .chroma .cpf { color: #008800 }
-/* Generic */ .chroma .g {  }
-/* GenericDeleted */ .chroma .gd { color: #a00000 }
-/* GenericEmph */ .chroma .ge { font-style: italic }
-/* GenericError */ .chroma .gr { color: #ff0000 }
-/* GenericHeading */ .chroma .gh { color: #000080; font-weight: bold }
-/* GenericInserted */ .chroma .gi { color: #00a000 }
-/* GenericOutput */ .chroma .go { color: #888888 }
-/* GenericPrompt */ .chroma .gp { color: #000080; font-weight: bold }
-/* GenericStrong */ .chroma .gs { font-weight: bold }
-/* GenericSubheading */ .chroma .gu { color: #800080; font-weight: bold }
-/* GenericTraceback */ .chroma .gt { color: #0044dd }
-/* GenericUnderline */ .chroma .gl { text-decoration: underline }
-/* TextWhitespace */ .chroma .w { color: #bbbbbb }
+/* Background */
+.chroma {
+  background-color: var(--background-primary);
+}
+/* Other */
+.chroma .x {
+}
+/* Error */
+.chroma .err {
+}
+/* LineTableTD */
+.chroma .lntd {
+  vertical-align: top;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+/* LineTable */
+.chroma .lntable {
+  border-spacing: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: auto;
+  overflow: auto;
+  display: block;
+}
+/* LineHighlight */
+.chroma .hl {
+  display: block;
+  width: 100%;
+  background-color: #ffffcc;
+}
+/* LineNumbersTable */
+.chroma .lnt {
+  margin-right: 0.4em;
+  padding: 0 0.4em 0 0.4em;
+  color: #7f7f7f;
+}
+/* LineNumbers */
+.chroma .ln {
+  margin-right: 0.4em;
+  padding: 0 0.4em 0 0.4em;
+  color: #7f7f7f;
+}
+/* Keyword */
+.chroma .k {
+  color: #aa22ff;
+  font-weight: bold;
+}
+/* KeywordConstant */
+.chroma .kc {
+  color: #aa22ff;
+  font-weight: bold;
+}
+/* KeywordDeclaration */
+.chroma .kd {
+  color: #aa22ff;
+  font-weight: bold;
+}
+/* KeywordNamespace */
+.chroma .kn {
+  color: #aa22ff;
+  font-weight: bold;
+}
+/* KeywordPseudo */
+.chroma .kp {
+  color: #aa22ff;
+}
+/* KeywordReserved */
+.chroma .kr {
+  color: #aa22ff;
+  font-weight: bold;
+}
+/* KeywordType */
+.chroma .kt {
+  color: #00bb00;
+  font-weight: bold;
+}
+/* Name */
+.chroma .n {
+}
+/* NameAttribute */
+.chroma .na {
+  color: #bb4444;
+}
+/* NameBuiltin */
+.chroma .nb {
+  color: #aa22ff;
+}
+/* NameBuiltinPseudo */
+.chroma .bp {
+}
+/* NameClass */
+.chroma .nc {
+  color: #0000ff;
+}
+/* NameConstant */
+.chroma .no {
+  color: #880000;
+}
+/* NameDecorator */
+.chroma .nd {
+  color: #aa22ff;
+}
+/* NameEntity */
+.chroma .ni {
+  color: #999999;
+  font-weight: bold;
+}
+/* NameException */
+.chroma .ne {
+  color: #d2413a;
+  font-weight: bold;
+}
+/* NameFunction */
+.chroma .nf {
+  color: #00a000;
+}
+/* NameFunctionMagic */
+.chroma .fm {
+}
+/* NameLabel */
+.chroma .nl {
+  color: #a0a000;
+}
+/* NameNamespace */
+.chroma .nn {
+  color: #0000ff;
+  font-weight: bold;
+}
+/* NameOther */
+.chroma .nx {
+}
+/* NameProperty */
+.chroma .py {
+}
+/* NameTag */
+.chroma .nt {
+  color: #008000;
+  font-weight: bold;
+}
+/* NameVariable */
+.chroma .nv {
+  color: #b8860b;
+}
+/* NameVariableClass */
+.chroma .vc {
+}
+/* NameVariableGlobal */
+.chroma .vg {
+}
+/* NameVariableInstance */
+.chroma .vi {
+}
+/* NameVariableMagic */
+.chroma .vm {
+}
+/* Literal */
+.chroma .l {
+}
+/* LiteralDate */
+.chroma .ld {
+}
+/* LiteralString */
+.chroma .s {
+  color: #bb4444;
+}
+/* LiteralStringAffix */
+.chroma .sa {
+  color: #bb4444;
+}
+/* LiteralStringBacktick */
+.chroma .sb {
+  color: #bb4444;
+}
+/* LiteralStringChar */
+.chroma .sc {
+  color: #bb4444;
+}
+/* LiteralStringDelimiter */
+.chroma .dl {
+  color: #bb4444;
+}
+/* LiteralStringDoc */
+.chroma .sd {
+  color: #bb4444;
+  font-style: italic;
+}
+/* LiteralStringDouble */
+.chroma .s2 {
+  color: #bb4444;
+}
+/* LiteralStringEscape */
+.chroma .se {
+  color: #bb6622;
+  font-weight: bold;
+}
+/* LiteralStringHeredoc */
+.chroma .sh {
+  color: #bb4444;
+}
+/* LiteralStringInterpol */
+.chroma .si {
+  color: #bb6688;
+  font-weight: bold;
+}
+/* LiteralStringOther */
+.chroma .sx {
+  color: #008000;
+}
+/* LiteralStringRegex */
+.chroma .sr {
+  color: #bb6688;
+}
+/* LiteralStringSingle */
+.chroma .s1 {
+  color: #bb4444;
+}
+/* LiteralStringSymbol */
+.chroma .ss {
+  color: #b8860b;
+}
+/* LiteralNumber */
+.chroma .m {
+  color: #666666;
+}
+/* LiteralNumberBin */
+.chroma .mb {
+  color: #666666;
+}
+/* LiteralNumberFloat */
+.chroma .mf {
+  color: #666666;
+}
+/* LiteralNumberHex */
+.chroma .mh {
+  color: #666666;
+}
+/* LiteralNumberInteger */
+.chroma .mi {
+  color: #666666;
+}
+/* LiteralNumberIntegerLong */
+.chroma .il {
+  color: #666666;
+}
+/* LiteralNumberOct */
+.chroma .mo {
+  color: #666666;
+}
+/* Operator */
+.chroma .o {
+  color: #666666;
+}
+/* OperatorWord */
+.chroma .ow {
+  color: #aa22ff;
+  font-weight: bold;
+}
+/* Punctuation */
+.chroma .p {
+}
+/* Comment */
+.chroma .c {
+  color: #008800;
+  font-style: italic;
+}
+/* CommentHashbang */
+.chroma .ch {
+  color: #008800;
+  font-style: italic;
+}
+/* CommentMultiline */
+.chroma .cm {
+  color: #008800;
+  font-style: italic;
+}
+/* CommentSingle */
+.chroma .c1 {
+  color: #008800;
+  font-style: italic;
+}
+/* CommentSpecial */
+.chroma .cs {
+  color: #008800;
+  font-weight: bold;
+}
+/* CommentPreproc */
+.chroma .cp {
+  color: #008800;
+}
+/* CommentPreprocFile */
+.chroma .cpf {
+  color: #008800;
+}
+/* Generic */
+.chroma .g {
+}
+/* GenericDeleted */
+.chroma .gd {
+  color: #a00000;
+}
+/* GenericEmph */
+.chroma .ge {
+  font-style: italic;
+}
+/* GenericError */
+.chroma .gr {
+  color: #ff0000;
+}
+/* GenericHeading */
+.chroma .gh {
+  color: #000080;
+  font-weight: bold;
+}
+/* GenericInserted */
+.chroma .gi {
+  color: #00a000;
+}
+/* GenericOutput */
+.chroma .go {
+  color: #888888;
+}
+/* GenericPrompt */
+.chroma .gp {
+  color: #000080;
+  font-weight: bold;
+}
+/* GenericStrong */
+.chroma .gs {
+  font-weight: bold;
+}
+/* GenericSubheading */
+.chroma .gu {
+  color: #800080;
+  font-weight: bold;
+}
+/* GenericTraceback */
+.chroma .gt {
+  color: #0044dd;
+}
+/* GenericUnderline */
+.chroma .gl {
+  text-decoration: underline;
+}
+/* TextWhitespace */
+.chroma .w {
+  color: #bbbbbb;
+}
