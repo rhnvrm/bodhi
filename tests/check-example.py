@@ -1,4 +1,4 @@
-"""Check links and search in the example site built below /preview/."""
+"""Check links and search in the example site at the supplied base URL."""
 
 import json
 import sys
@@ -6,7 +6,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urljoin, urlsplit
 
-SITE = "https://example.com/preview/"
+SITE = sys.argv[2] if len(sys.argv) > 2 else "https://example.com/preview/"
 ORIGIN = urlsplit(SITE)
 
 
@@ -42,7 +42,7 @@ def main(output):
 
     index = json.loads((output / "index.json").read_text(encoding="utf-8"))
     assert "Markdown Syntax Guide" in {entry["title"] for entry in index}
-    assert all(urlsplit(entry["permalink"]).path != "/preview/search/" for entry in index)
+    assert all(urlsplit(entry["permalink"]).path != ORIGIN.path + "search/" for entry in index)
 
 
 if __name__ == "__main__":

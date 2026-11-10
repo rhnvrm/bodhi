@@ -1,4 +1,4 @@
-baseURL = "https://example.com/"
+baseURL = "https://rhnvrm.github.io/bodhi/"
 locale = "en-US"
 title = "Bodhi Theme"
 theme = "bodhi"
@@ -7,7 +7,6 @@ theme = "bodhi"
     subtitle = "simple and minimal."
     avatar = "/avatar.png"
     author = "Rohan Verma"
-    commentoSrc = "https://commento.example.com/js/commento.js"
     footerMessage = "Keep it simple."
     disableSearch = false
 

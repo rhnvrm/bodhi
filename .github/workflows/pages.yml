@@ -1,0 +1,53 @@
+name: Deploy demo to Pages
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5.0.0
+      - name: Build example site
+        env:
+          BASE_URL: ${{ steps.pages.outputs.base_url }}/
+        run: |
+          curl --fail --silent --show-error --location --retry 3 \
+            https://github.com/gohugoio/hugo/releases/download/v0.169.0/hugo_0.169.0_linux-amd64.tar.gz \
+            --output "$RUNNER_TEMP/hugo.tar.gz"
+          echo "2d2f0bfe357d8cb4cec02f6bb28a3bff34978c8dda44b618029c5eb9d66765a7  $RUNNER_TEMP/hugo.tar.gz" | sha256sum --check
+          tar -xzf "$RUNNER_TEMP/hugo.tar.gz" -C "$RUNNER_TEMP" hugo
+          mkdir -p "$RUNNER_TEMP/themes"
+          ln -s "$GITHUB_WORKSPACE" "$RUNNER_TEMP/themes/bodhi"
+          "$RUNNER_TEMP/hugo" --source exampleSite --themesDir "$RUNNER_TEMP/themes" \
+            --destination "$RUNNER_TEMP/public" --baseURL "$BASE_URL"
+          python3 tests/check-example.py "$RUNNER_TEMP/public" "$BASE_URL"
+      - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
+        with:
+          path: ${{ runner.temp }}/public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4.0.5

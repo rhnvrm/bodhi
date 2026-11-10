@@ -2,13 +2,13 @@
 
 Bodhi is a simple, minimal, personal website theme for Hugo.
 
-[Hugo Themes](https://themes.gohugo.io/themes/bodhi/) | [Github](https://github.com/rhnvrm/bodhi)
+[Live demo](https://rhnvrm.github.io/bodhi/) | [Hugo Themes](https://themes.gohugo.io/themes/bodhi/) | [GitHub](https://github.com/rhnvrm/bodhi)
 
 ## Previews
 
-![preview](https://rohanverma.net/projects/bodhi/preview.png)
+![Bodhi example site in light mode](images/screenshot.png)
 
-![preview_dark](https://rohanverma.net/projects/bodhi/preview_dark.png)
+![Bodhi example site in dark mode](images/screenshot-dark.png)
 
 ## Features
 
@@ -56,7 +56,7 @@ git submodule add https://github.com/rhnvrm/bodhi themes/bodhi
 
 ### Sample Config
 
-After cloning the submodule, you can need to update your hugo config.toml
+After cloning the submodule, update your site's `hugo.toml` or `config.toml`.
 
 You can use the following sample config file:
 
@@ -142,6 +142,10 @@ Keep `JSON` in the home outputs above and copy `exampleSite/content/search.md` t
 
 The Fathom configuration above uses the legacy self-hosted tracker. For hosted Fathom, use the embed script from your Fathom dashboard.
 
+## Demo deployment
+
+The [live demo](https://rhnvrm.github.io/bodhi/) builds `exampleSite` with Hugo 0.169.0 and deploys through GitHub Actions on every push to `master`. The Pages workflow checks generated links and the search index before deployment. In the repository's Pages settings, the build source must be **GitHub Actions**. You can also run **Deploy demo to Pages** manually from the Actions tab.
+
 ## Inspiration - suckless
 
-[suckless](https://suckless.org) is known for their focus on simplicity and clarity. Their website is a good example of simple website design. I really liked how they use the two-column design as a mini-sitemap. This tree layout, is something that is familiar and intuitive to a lot of people. This inspired me to build [Bodhi](/projects/bodhi) to have a two-column layout with the column showing a tree like column on the left. 
+[suckless](https://suckless.org) is known for their focus on simplicity and clarity. Their website is a good example of simple website design. I really liked how they use the two-column design as a mini-sitemap. This tree layout is familiar and intuitive to a lot of people. This inspired me to build [Bodhi](https://rhnvrm.github.io/bodhi/) with a tree of links in the left column.
