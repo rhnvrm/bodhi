@@ -1,22 +1,19 @@
 {{ define "footerfiles" }}
-<script>
-  var baseURL = {{ .Site.BaseURL }}
-</script>
-<script src="{{ "/js/jquery-3.7.1.min.js" | relURL }}"></script>
-<script src="{{ "/js/fuse.min.js" | relURL }}"></script>
-<script src="{{ "/js/jquery.mark.min.js" | relURL }}"></script>
-<script src="{{ "/js/search.js" | relURL }}"></script>
+<script src="{{ "js/jquery-3.7.1.min.js" | relURL }}"></script>
+<script src="{{ "js/fuse.min.js" | relURL }}"></script>
+<script src="{{ "js/jquery.mark.min.js" | relURL }}"></script>
+<script src="{{ "js/search.js" | relURL }}"></script>
 {{ end }}
 {{ define "main" }}
 <div>
   <h2>Search</h2>
   <div class="my-auto" >
-    <form action="{{ "search" | relURL }}">
-      <input id="search-query" name="s" placeholder="search"/>
+    <form action="{{ .RelPermalink }}">
+      <input id="search-query" name="s" aria-label="Search" placeholder="search"/>
     </form>
     <span class="small">press enter to search</span>
 
-    <div id="search-results">
+    <div id="search-results"{{ with .Site.Home.OutputFormats.Get "json" }} data-index-url="{{ .RelPermalink }}"{{ end }}>
      <h3>Matching pages</h3>
     </div>
   </div>

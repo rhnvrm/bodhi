@@ -102,16 +102,24 @@ a:hover {
   padding: 0.7ex;
   color: var(--menu-color);
   background-color: var(--menu-background-color);
-  border-top: 1px solid var(--menu-border-top);
+  border-top: 1px solid var(--menu-border-top-color);
   border-bottom: 1px solid var(--menu-border-bottom-color);
 }
 
-#menu a {
+#menu a,
+#menu button {
   padding: 0.5ex 1ex;
   color: var(--menu-a-color);
 }
 
-#menu a:hover {
+#menu button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+#menu a:hover,
+#menu button:hover {
   background-color: var(--menu-a-hover-background-color);
 }
 

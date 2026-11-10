@@ -2,7 +2,7 @@
 
 Bodhi is a simple, minimal, personal website theme for Hugo.
 
-[Demo](https://themes.gohugo.io//theme/bodhi/blog) | [Github](https://github.com/rhnvrm/bodhi)
+[Hugo Themes](https://themes.gohugo.io/themes/bodhi/) | [Github](https://github.com/rhnvrm/bodhi)
 
 ## Previews
 
@@ -45,7 +45,9 @@ baseURL = "https://rohanverma.net/"
 languageCode = "en-us"
 title = "Rohan Verma"
 theme = "bodhi"
-googleAnalytics = "xxxx"
+
+[services.googleAnalytics]
+    id = "G-XXXXXXXXXX"
 
 [params]
     subtitle = "(rhnvrm)"
@@ -97,9 +99,6 @@ parent = "blogs"
 name = "categories"
 url = "/categories"
 weight = 3
-
-[markup.goldmark.renderer]
-unsafe= true
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
