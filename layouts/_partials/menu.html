@@ -16,10 +16,13 @@
 		<i data-feather="{{ $key.icon }}"></i>
 	</a>
 	{{- end -}}
-	<button type="button" data-set-theme="dark" aria-label="Use dark theme">
+	<button type="button" data-set-theme="system" aria-label="Use system theme" aria-pressed="true">
+		<i data-feather="monitor" aria-hidden="true"></i>
+	</button>
+	<button type="button" data-set-theme="dark" aria-label="Use dark theme" aria-pressed="false">
 		<i data-feather="moon" aria-hidden="true"></i>
 	</button>
-	<button type="button" data-set-theme="light" aria-label="Use light theme">
+	<button type="button" data-set-theme="light" aria-label="Use light theme" aria-pressed="false">
 		<i data-feather="sun" aria-hidden="true"></i>
 	</button>
 	{{ if not .Site.Params.disableSearch }}

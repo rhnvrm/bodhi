@@ -1,6 +1,7 @@
 {{ define "main" }}
 {{ with .Title }}<h1>{{ . }}</h1>{{ end }}
-{{ range (where .Site.RegularPages "Date.IsZero" false).GroupByDate "2006" }}
+{{ $posts := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+{{ range (where $posts "Date.IsZero" false).GroupByDate "2006" }}
 <table class="all-posts">
   <col width="15%">
   <col width="85%">

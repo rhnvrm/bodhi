@@ -13,9 +13,9 @@ jobs:
     strategy:
       matrix:
         include:
-          - version: '0.70.0'
-            asset: hugo_0.70.0_Linux-64bit.tar.gz
-            sha256: d0e2e1f8d2f69c1b378e34daaf9f91997cf777d3151da4d8aa6bd7b5703f9446
+          - version: '0.158.0'
+            asset: hugo_0.158.0_linux-amd64.tar.gz
+            sha256: d0d8f0735dccef76e900719a70102f269c418e010a02e3e0f9e206a208346e2f
           - version: '0.169.0'
             asset: hugo_0.169.0_linux-amd64.tar.gz
             sha256: 2d2f0bfe357d8cb4cec02f6bb28a3bff34978c8dda44b618029c5eb9d66765a7

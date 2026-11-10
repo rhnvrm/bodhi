@@ -7,14 +7,10 @@
 	{{ end }}
 
 	{{ $pages := .RegularPages }}
-
-	{{ if .Sections }}
-	{{ range $section := .Sections }}
-	{{ $pages = union $pages $section.Pages }}
+	{{ if .IsSection }}
+		{{ $pages = .RegularPagesRecursive }}
 	{{ end }}
-	{{ end }}
-	
-	{{ $sorted := sort $pages "Params.date" "desc" }}
+	{{ $sorted := $pages.ByDate.Reverse }}
 	{{ range $post := (.Paginate $sorted).Pages }}
 	{{ partial "list_preview" $post }}
 	{{ end }}

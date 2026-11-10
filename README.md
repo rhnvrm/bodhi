@@ -26,6 +26,26 @@ Bodhi is a simple, minimal, personal website theme for Hugo.
   - Menu bar with left/right split
   - Navigation bar with custom tree
   
+## Hugo versions
+
+Bodhi v0.2 requires Hugo 0.158.0 or newer. Use Bodhi v0.1.2 if you need Hugo 0.70.0 support or the legacy template paths. For a theme installed as a submodule, pin the compatibility release with `git -C themes/bodhi checkout v0.1.2` and commit the updated submodule pointer in your site.
+
+If you override theme templates in your site, update their paths before upgrading:
+
+| v0.1 path | v0.2 path |
+| --- | --- |
+| `layouts/_default/baseof.html` | `layouts/baseof.html` |
+| `layouts/_default/single.html` | `layouts/page.html` |
+| `layouts/_default/list.html` | `layouts/list.html` |
+| `layouts/_default/terms.html` | `layouts/taxonomy.html` |
+| `layouts/_default/article.html` and `layouts/_default/search.html` | `layouts/article.html` and `layouts/search.html` |
+| `layouts/_default/index.json` | `layouts/home.json` |
+| `layouts/index.html` | `layouts/home.html` |
+| `layouts/section/archive.html` | `layouts/archive/section.html` |
+| `layouts/partials/` | `layouts/_partials/` |
+
+Rename the `languageCode` setting to `locale`. The archive now follows `params.mainSections`, like the home feed. If your archive lives at a custom section path, move or copy its section template to the matching directory under `layouts/`.
+
 ## Get Started
 
 ### Clone as submodule in your hugo site
@@ -42,7 +62,7 @@ You can use the following sample config file:
 
 ```toml
 baseURL = "https://rohanverma.net/"
-languageCode = "en-us"
+locale = "en-US"
 title = "Rohan Verma"
 theme = "bodhi"
 
