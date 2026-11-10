@@ -2,28 +2,38 @@ if (window.feather) {
     window.feather.replace({ width: "1em", height: "1em" });
 }
 
-document.querySelectorAll("[data-set-theme]").forEach(button => {
-    button.addEventListener("click", () => toggleTheme(button.dataset.setTheme));
+const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
+const themeButtons = document.querySelectorAll("[data-set-theme]");
+let theme = "system";
+
+try {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "light" || savedTheme === "dark") {
+        theme = savedTheme;
+    }
+} catch {
+    // The theme can still be changed when storage is unavailable.
+}
+
+function applyTheme() {
+    const systemPreference = systemTheme.matches ? "dark" : "light";
+    document.documentElement.dataset.theme = theme === "system" ? systemPreference : theme;
+    themeButtons.forEach(button => {
+        button.setAttribute("aria-pressed", String(button.dataset.setTheme === theme));
+    });
+}
+
+themeButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        theme = button.dataset.setTheme;
+        applyTheme();
+        try {
+            localStorage.setItem("theme", theme);
+        } catch {
+            // Keep the preference for this page.
+        }
+    });
 });
 
-let element = document.getElementById("main");
-if (document.body.clientWidth < 632) {
-    element.scrollIntoView({behavior: "smooth"});
-}
-
-
-// Set the theme
-// Ref: https://livecodestream.dev/post/2020-08-06-a-better-approach-to-dark-mode-on-your-website/
-// Capture the current theme from local storage and adjust the page to use the current theme.
-const htmlEl = document.getElementsByTagName('html')[0];
-const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-
-if (currentTheme) {
-    htmlEl.dataset.theme = currentTheme;
-}
-
-// When the user changes the theme, we need to save the new value on local storage
-const toggleTheme = (theme) => {
-    htmlEl.dataset.theme = theme;
-    localStorage.setItem('theme', theme);
-}
+systemTheme.addEventListener("change", applyTheme);
+applyTheme();

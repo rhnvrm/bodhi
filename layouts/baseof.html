@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 
-<html lang="{{ .Site.Language.Lang }}">
+<html lang="{{ .Site.Language.Locale }}">
 
 	<head>
 		{{ partial "header.html" . }}
 	</head>
 
 	<body>
+		<a class="skip-link" href="#main">Skip to content</a>
 		{{ partial "head.html" . }}
 		{{ partial "menu.html" . }}
 		<div id="content">
 			{{ partial "nav.html" . }}
-			<div id="main">
+			<main id="main" tabindex="-1">
 				{{- block "main" . }}{{- end }}
 				{{ partial "footer.html" . }}
-			</div>
+			</main>
 			{{- block "footerfiles" . }}{{- end }}
 
 			{{ if and .Site.Params.fathomAnalytics .Site.Params.fathomAnalytics.siteID }}
 			{{- partial "fathom" . -}}
 			{{ end }}
 
-			{{ template "_internal/google_analytics.html" . }}
+			{{ partial "google_analytics.html" . }}
 		</div>
 
 		<script src="{{ "js/main.js" | relURL }}"></script>

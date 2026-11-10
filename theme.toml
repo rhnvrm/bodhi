@@ -5,7 +5,7 @@ description = "A simple, minimal, personal website theme for Hugo."
 homepage = "https://rohanverma.net/projects/bodhi"
 tags = ["blog", "minimal", "simple", "personal", "google-analytics", "minimalist", "search"]
 features = []
-min_version = "0.70.0"
+min_version = "0.158.0"
 
 [author]
   name = "Rohan Verma"

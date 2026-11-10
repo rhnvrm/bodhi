@@ -13,7 +13,7 @@
 				</ul>
 			</div>
 			{{ end }}
-			{{ template "_internal/disqus.html" . }}
+			{{ partial "disqus.html" . }}
 			{{ with .Site.Params.CommentoSrc }}
 			<div>
 				{{ partial "commento.html" . }}
