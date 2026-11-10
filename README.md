@@ -2,7 +2,7 @@
 
 Bodhi is a simple, minimal, personal website theme for Hugo.
 
-[Demo](https://themes.gohugo.io//theme/bodhi/blog) | [Github](https://github.com/rhnvrm/bodhi)
+[Hugo Themes](https://themes.gohugo.io/themes/bodhi/) | [Github](https://github.com/rhnvrm/bodhi)
 
 ## Previews
 
@@ -45,7 +45,9 @@ baseURL = "https://rohanverma.net/"
 languageCode = "en-us"
 title = "Rohan Verma"
 theme = "bodhi"
-googleAnalytics = "xxxx"
+
+[services.googleAnalytics]
+    id = "G-XXXXXXXXXX"
 
 [params]
     subtitle = "(rhnvrm)"
@@ -98,9 +100,6 @@ name = "categories"
 url = "/categories"
 weight = 3
 
-[markup.goldmark.renderer]
-unsafe= true
-
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
@@ -116,6 +115,12 @@ unsafe= true
     noClasses = false
     tabWidth = 4
 ```
+
+### Enable search
+
+Keep `JSON` in the home outputs above and copy `exampleSite/content/search.md` to your site's `content/search.md`, or create a page at that path with `layout: search` in its front matter. Set `params.disableSearch = true` to hide the menu link.
+
+The Fathom configuration above uses the legacy self-hosted tracker. For hosted Fathom, use the embed script from your Fathom dashboard.
 
 ## Inspiration - suckless
 

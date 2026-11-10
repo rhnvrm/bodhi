@@ -1,34 +1,27 @@
 {{ define "main" }}
-{{ with .Title }}
-<h1>{{.}}</h1>
-{{ end }}
-{{ $prev := 3000}}
-{{range .Site.RegularPages}}
-{{if .Date}}
-{{if gt $prev (.Date.Format "2006")}}
-{{ if ne $prev 3000}}
-</tbody>
-</table>
-{{ end }}
+{{ with .Title }}<h1>{{ . }}</h1>{{ end }}
+{{ range (where .Site.RegularPages "Date.IsZero" false).GroupByDate "2006" }}
 <table class="all-posts">
   <col width="15%">
   <col width="85%">
   <thead>
     <tr><th></th><th>
-        {{$dt := .Date.Format "2006" }}
-        <a href="/blog/{{$dt}}">
-          {{ $dt }}
-        </a>
+      {{ $year := .Key }}
+      {{ with $.Site.GetPage (printf "/blog/%s" $year) }}
+        <a href="{{ .RelPermalink }}">{{ $year }}</a>
+      {{ else }}
+        {{ .Key }}
+      {{ end }}
     </th></tr>
   </thead>
   <tbody>
-    {{end}}
+    {{ range .Pages }}
     <tr>
-      <th>{{.Date.Format "02 Jan"}}</th>
-      <td><a href="{{.Permalink}}">{{.Title}}</a> {{if .Draft}}(draft){{end}}</td>
+      <th>{{ .Date.Format "02 Jan" }}</th>
+      <td><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ if .Draft }} (draft){{ end }}</td>
     </tr>
-    {{ $prev = .Date.Format "2006"}}
-    {{end}}
-    {{end}}
-</table>   
+    {{ end }}
+  </tbody>
+</table>
+{{ end }}
 {{ end }}

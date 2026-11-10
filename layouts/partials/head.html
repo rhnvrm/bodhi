@@ -1,8 +1,11 @@
 <div id="header">
-    {{ if .Site.Params.Avatar }}
+    {{ with $avatar := .Site.Params.Avatar }}
+        {{ if not (hasPrefix $avatar ("" | relURL)) }}
+            {{ $avatar = $avatar | replaceRE "^/([^/]|$)" "$1" | relURL }}
+        {{ end }}
         <div class="avatar">
-			<a href="{{ .Site.BaseURL }}">
-				<img src="{{ .Site.Params.Avatar | relURL }}" alt="{{ .Site.Title }}" />
+			<a href="{{ $.Site.BaseURL }}">
+				<img src="{{ $avatar }}" alt="{{ $.Site.Title }}" />
 			</a>
         </div>
     {{ end }}

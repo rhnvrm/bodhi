@@ -2,13 +2,13 @@
 	{{ $currentPage := . }}
 	{{ range .Site.Menus.main }}
 	{{if eq $currentPage.Params.url .URL }}<b>{{end}}
-	<a href="{{ .URL | relURL }}">{{ .Name }}</a>
+	<a href="{{ .URL }}">{{ .Name }}</a>
 	{{if eq $currentPage.Params.url .URL }}</b>{{end}}
 	{{ end }}
 	<span class="right">
 		{{ range .Site.Menus.main_right }}
 		{{if eq $currentPage.Params.url .URL }}<b>{{end}}
-			<a href="{{ .URL | relURL }}">{{ .Name }}</a>
+			<a href="{{ .URL }}">{{ .Name }}</a>
 		{{if eq $currentPage.Params.url .URL }}</b>{{end}}
 	{{ end }}
 	{{- range $index, $key := .Site.Params.Social -}}
@@ -16,16 +16,17 @@
 		<i data-feather="{{ $key.icon }}"></i>
 	</a>
 	{{- end -}}
-	<a onclick="toggleTheme('dark');">
-		<i data-feather="moon"></i>
-	</a>
-	<a onclick="toggleTheme('light');">
-		<i data-feather="sun"></i>
-	</a>
-	{{if eq $currentPage.Params.url "/search/" }}<b>{{end}}
-	{{if and (not (isset .Site.Params "disableSearch")) (not (eq .Site.Params.disableSearch true)) }}
-		<a href="{{ "/search" | relURL }}">search<svg aria-hidden="true" class="i-search" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"><circle cx="14" cy="14" r="12"></circle><path d="M23 23l7 7"></path></svg></a>	
-	{{end}}
-	{{if eq $currentPage.Params.url "/search/" }}</b>{{end}}
+	<button type="button" data-set-theme="dark" aria-label="Use dark theme">
+		<i data-feather="moon" aria-hidden="true"></i>
+	</button>
+	<button type="button" data-set-theme="light" aria-label="Use light theme">
+		<i data-feather="sun" aria-hidden="true"></i>
+	</button>
+	{{ if not .Site.Params.disableSearch }}
+		{{ $search := .Site.GetPage "/search" }}
+		{{ if and $search (.Site.Home.OutputFormats.Get "json") }}
+			<a href="{{ $search.RelPermalink }}"{{ if eq $currentPage $search }} aria-current="page"{{ end }}>search<svg aria-hidden="true" class="i-search" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"><circle cx="14" cy="14" r="12"></circle><path d="M23 23l7 7"></path></svg></a>
+		{{ end }}
+	{{ end }}
 	</span>
 </div>

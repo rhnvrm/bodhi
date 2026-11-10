@@ -1,3 +1,11 @@
+if (window.feather) {
+    window.feather.replace({ width: "1em", height: "1em" });
+}
+
+document.querySelectorAll("[data-set-theme]").forEach(button => {
+    button.addEventListener("click", () => toggleTheme(button.dataset.setTheme));
+});
+
 let element = document.getElementById("main");
 if (document.body.clientWidth < 632) {
     element.scrollIntoView({behavior: "smooth"});

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="{{ .Site.Language.Lang }}">
 
 	<head>
 		{{ partial "header.html" . }}
@@ -23,15 +23,8 @@
 
 			{{ template "_internal/google_analytics.html" . }}
 		</div>
-		{{- with .Site.Params.Social -}}
-		<script>feather.replace({
-			width: "1em",
-			height: "1em",
-		})
-		</script>
-		{{- end }}
 
-		<script src="{{ "/js/main.js" | relURL }}"></script>
+		<script src="{{ "js/main.js" | relURL }}"></script>
 	</body>
 
 </html>

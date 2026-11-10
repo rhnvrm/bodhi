@@ -1,0 +1,39 @@
+name: Example site
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - version: '0.70.0'
+            asset: hugo_0.70.0_Linux-64bit.tar.gz
+            sha256: d0e2e1f8d2f69c1b378e34daaf9f91997cf777d3151da4d8aa6bd7b5703f9446
+          - version: '0.169.0'
+            asset: hugo_0.169.0_linux-amd64.tar.gz
+            sha256: 2d2f0bfe357d8cb4cec02f6bb28a3bff34978c8dda44b618029c5eb9d66765a7
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Build and check links
+        env:
+          HUGO_VERSION: ${{ matrix.version }}
+          HUGO_ASSET: ${{ matrix.asset }}
+          HUGO_SHA256: ${{ matrix.sha256 }}
+        run: |
+          curl --fail --silent --show-error --location --retry 3 \
+            "https://github.com/gohugoio/hugo/releases/download/v$HUGO_VERSION/$HUGO_ASSET" \
+            --output "$RUNNER_TEMP/$HUGO_ASSET"
+          echo "$HUGO_SHA256  $RUNNER_TEMP/$HUGO_ASSET" | sha256sum --check
+          tar -xzf "$RUNNER_TEMP/$HUGO_ASSET" -C "$RUNNER_TEMP" hugo
+          mkdir -p "$RUNNER_TEMP/themes"
+          ln -s "$GITHUB_WORKSPACE" "$RUNNER_TEMP/themes/bodhi"
+          "$RUNNER_TEMP/hugo" --source exampleSite --themesDir "$RUNNER_TEMP/themes" \
+            --destination "$RUNNER_TEMP/public" --baseURL https://example.com/preview/
+          python3 tests/check-example.py "$RUNNER_TEMP/public"
