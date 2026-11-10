@@ -7,7 +7,7 @@
   <ul>
     <li>
       {{ if eq $currentPage $menuPage }}<b>{{ end }}
-        <a href="{{.URL | relURL }}">
+        <a href="{{.URL }}">
           <span>{{ .Name }} {{ if .Children }}/{{ end }}</span>
         </a>
       {{ if eq $currentPage $menuPage }}</b>{{ end }}
@@ -18,7 +18,7 @@
         <ul>
           <li>
             {{ if eq $currentPage $menuChildPage }}<b>{{ end }}
-              <a href="{{ .URL | relURL }}">{{ .Name }}</a>
+              <a href="{{ .URL }}">{{ .Name }}</a>
             {{ if eq $currentPage $menuChildPage }}</b>{{ end }}
           </li>
         </ul>

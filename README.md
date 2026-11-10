@@ -116,6 +116,12 @@ weight = 3
     tabWidth = 4
 ```
 
+### Enable search
+
+Keep `JSON` in the home outputs above and copy `exampleSite/content/search.md` to your site's `content/search.md`, or create a page at that path with `layout: search` in its front matter. Set `params.disableSearch = true` to hide the menu link.
+
+The Fathom configuration above uses the legacy self-hosted tracker. For hosted Fathom, use the embed script from your Fathom dashboard.
+
 ## Inspiration - suckless
 
 [suckless](https://suckless.org) is known for their focus on simplicity and clarity. Their website is a good example of simple website design. I really liked how they use the two-column design as a mini-sitemap. This tree layout, is something that is familiar and intuitive to a lot of people. This inspired me to build [Bodhi](/projects/bodhi) to have a two-column layout with the column showing a tree like column on the left. 

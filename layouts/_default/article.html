@@ -4,11 +4,11 @@
 			<div>
 				{{ .Content }}
 			</div>
-			{{ with .Params.tags }}
+			{{ with .GetTerms "tags" }}
 			<div>
 				<ul id="tags">
 					{{ range . }}
-					<li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+					<li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
 					{{ end }}
 				</ul>
 			</div>

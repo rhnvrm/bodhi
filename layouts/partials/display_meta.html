@@ -3,16 +3,16 @@
 	<span>{{ .ReadingTime }} minute read</span>
 </div>
 <div class="small light">
-	{{ with .Params.categories }}
+	{{ with .GetTerms "categories" }}
 	categories: 
 	{{ range . }}
-	<a href="{{ "/categories/" | relURL }}{{ . | urlize }}">{{ . }}</a>
+	<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
 	{{ end }}
 	{{ end }}
-	{{ with .Params.tags }}
+	{{ with .GetTerms "tags" }}
 	tags: 
 	{{ range . }}
-	<a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>
+	<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
 	{{ end }}
 	{{ end }}
 </div>
