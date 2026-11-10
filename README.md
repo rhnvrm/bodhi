@@ -6,9 +6,9 @@ Bodhi is a simple, minimal, personal website theme for Hugo.
 
 ## Previews
 
-![Bodhi example site in light mode](images/screenshot.png)
+![Bodhi example site in light mode](https://raw.githubusercontent.com/rhnvrm/bodhi/master/images/screenshot.png)
 
-![Bodhi example site in dark mode](images/screenshot-dark.png)
+![Bodhi example site in dark mode](https://raw.githubusercontent.com/rhnvrm/bodhi/master/images/screenshot-dark.png)
 
 ## Features
 
@@ -145,6 +145,8 @@ The Fathom configuration above uses the legacy self-hosted tracker. For hosted F
 ## Demo deployment
 
 The [live demo](https://rhnvrm.github.io/bodhi/) builds `exampleSite` with Hugo 0.169.0 and deploys through GitHub Actions on every push to `master`. The Pages workflow checks generated links and the search index before deployment. In the repository's Pages settings, the build source must be **GitHub Actions**. You can also run **Deploy demo to Pages** manually from the Actions tab.
+
+The [Hugo Themes listing](https://themes.gohugo.io/themes/bodhi/) refreshes daily after 00:00 UTC using the latest tagged release. Publish a new release after changing theme metadata, README content, or preview images so the listing can pick up those changes.
 
 ## Inspiration - suckless
 
